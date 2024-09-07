@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DailyLogController;
+use App\Http\Controllers\EmployeeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', [EmployeeController::class, 'showLoginForm'])->name('login');
+Route::post('/', [EmployeeController::class, 'postLogin']);
+
+Route::middleware(['auth'])->group(function () {
+    Route::post('/logout', [EmployeeController::class, 'logout']);
+
+    Route::get('/dashboard', [DailyLogController::class, 'showDashboard'])->name('dashboard')->middleware(('auth'));
 });
