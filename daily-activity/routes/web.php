@@ -26,6 +26,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/logout', [EmployeeController::class, 'logout']);
 
     Route::get('/dashboard', [DailyLogController::class, 'showDashboard'])->name('dashboard')->middleware(('auth'));
+    Route::get('/events', [DailyLogController::class, 'getEvents'])->name('events');
     // route daily logs    
     Route::get('/dailyLogs', [DailyLogController::class, 'showDailyLog'])->name('dailyLogs')->middleware(('auth'));
     Route::get('/createForm', [DailyLogController::class, 'create'])->name('createForm');
