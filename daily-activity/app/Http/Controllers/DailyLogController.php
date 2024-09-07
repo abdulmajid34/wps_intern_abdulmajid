@@ -13,6 +13,22 @@ class DailyLogController extends Controller
         return view('dashboard');
     }
 
+    public function getEvents(Request $request)
+    {
+        $events = [
+            [
+                'title' => 'Event 1',
+                'start' => '2024-09-10',
+            ],
+            [
+                'title' => 'Event 2',
+                'start' => '2024-09-12',
+            ],
+        ];
+
+        return response()->json($events);
+    }
+
     public function showDailyLog(Request $request)
     {
         if (Auth::user()->id == 1) {
