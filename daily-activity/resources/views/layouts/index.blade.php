@@ -18,6 +18,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="/resources/js/index.js"></script>
 
@@ -80,28 +85,9 @@
                             </a>
                         </li>
                         <li class="nav-item my-2">
-                            <a class="nav-link text-white" href="#">
+                            <a class="nav-link text-white" href="{{ route('dailyLogs') }}">
                                 <span data-feather="file"></span>
-                                Items Management
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="#">
-                                <span data-feather="shopping-cart"></span>
-                                Customer List
-                            </a>
-                        </li>
-                        <li class="nav-item my-2">
-                            <a class="nav-link text-white" href="#">
-                                <span data-feather="users"></span>
-                                Reports
-                            </a>
-                        </li>
-
-                        <li class="nav-item my-2">
-                            <a class="nav-link text-white " href="#">
-                                <span data-feather="bar-chart-2"></span>
-                                Employee List
+                                Daily logs
                             </a>
                         </li>
                     </ul>

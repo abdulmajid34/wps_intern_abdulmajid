@@ -26,4 +26,14 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/logout', [EmployeeController::class, 'logout']);
 
     Route::get('/dashboard', [DailyLogController::class, 'showDashboard'])->name('dashboard')->middleware(('auth'));
+    // route daily logs    
+    Route::get('/dailyLogs', [DailyLogController::class, 'showDailyLog'])->name('dailyLogs')->middleware(('auth'));
+    Route::get('/createForm', [DailyLogController::class, 'create'])->name('createForm');
+    Route::post('/createForm', [DailyLogController::class, 'store']);
+    Route::get('/editForm/{id}', [DailyLogController::class, 'edit'])->name('editForm');
+    Route::put('/editForm/{id}', [DailyLogController::class, 'update']);
+    Route::delete('/destroy/{id}', [DailyLogController::class, 'destroy']);
+
+    // Route untuk verifikasi log
+    Route::post('/dailyLogs/{dailyLog}/verify/{status}', [DailyLogController::class, 'verifyLog'])->name('dailyLog.verify');
 });
