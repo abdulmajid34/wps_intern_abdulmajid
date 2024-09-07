@@ -17,8 +17,9 @@ class CreateDailyLogsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('employee_id');
             $table->foreign('employee_id')->references('id')->on('employees')->onDelete('cascade');
-            $table->text('log_text');
-            $table->string('workbook')->nullable();
+            $table->text('description');
+            $table->string('file')->nullable();
+            $table->enum('status', ['pending', 'approved', 'rejected'])->default('pending');
             $table->timestamps();
         });
     }

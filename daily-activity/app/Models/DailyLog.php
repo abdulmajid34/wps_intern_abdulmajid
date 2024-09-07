@@ -10,8 +10,9 @@ class DailyLog extends Model
     use HasFactory;
     protected $fillable = [
         'employee_id',
-        'log_text',
-        'workbook',
+        'description',
+        'status',
+        'file',
     ];
 
     /**
